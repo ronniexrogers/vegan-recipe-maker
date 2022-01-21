@@ -1,8 +1,18 @@
+import { useRef, useState } from "react";
+
 const SearchBar = () => {
+
+    const [input, setInput] = useState('')
+    const submitData = () => {
+        setInput(userInput.current.value)
+    }
+
+    const userInput = useRef()
+
     return ( 
         <div className="search-bar">
-                <input type="text" placeholder="Enter Ingredients" ></input>
-                <button onClick={() => console.log("button clicked")}>enter</button>
+                <input ref={userInput} type="text" placeholder="Enter Ingredients" ></input>
+                <button onClick={submitData}>enter</button>
         </div>
      );
 }

@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 const Recipe = () => {
     let { id } = useParams()
     const API_KEY = process.env.REACT_APP_API_KEY
-    // const url = `https://api.spoonacular.com/recipes/${id}/card?apiKey=${API_KEY}`
     const ingredientsUrl = `https://api.spoonacular.com/recipes/${id}/ingredientWidget.json?apiKey=${API_KEY}`
     const instructionsUrl = `https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=${API_KEY}`
     const summaryUrl = `https://api.spoonacular.com/recipes/${id}/summary?apiKey=${API_KEY}`
@@ -36,8 +35,6 @@ const Recipe = () => {
           <p>Loading....</p>
         )
       }
-
-      console.log(ingredients)
 
     return ( 
         <div className="recipe">

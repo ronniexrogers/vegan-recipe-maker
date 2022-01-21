@@ -20,5 +20,3 @@ const RecipesList = (data) => {
 }
  
 export default RecipesList;
-
-// "https://spoonacular.com/"+recipe.title.trim().split(/\s+/).join('-')+"-"+recipe.id
