@@ -8,8 +8,8 @@ const Recipe = () => {
     const ingredientsUrl = `https://api.spoonacular.com/recipes/${id}/ingredientWidget.json?apiKey=${API_KEY}`
     const instructionsUrl = `https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=${API_KEY}`
     
-    const [ingredients, setIngredients] = useState(null)
-    const [instructions, setInstructions] = useState(null)
+    const [ingredients, setIngredients] = useState([])
+    const [instructions, setInstructions] = useState([])
 
     useEffect(() => {
         fetch(ingredientsUrl)
@@ -20,8 +20,10 @@ const Recipe = () => {
       useEffect(() => {
         fetch(instructionsUrl)
         .then(res => res.json())
-        .then(data =>  console.log(data))
+        .then(data =>  setInstructions(data[0].steps))
       },[])
+
+      console.log(instructions)
 
       if(!ingredients) {
         return (
@@ -37,6 +39,12 @@ const Recipe = () => {
                         -{ ingredient.name }: { ingredient.amount.us.value } { ingredient.amount.us.unit }
                 </div>
             )) }
+            Instructions:
+            { instructions.map((instruction) => (
+                <div key={ instruction.number } className="ingredients">
+                    -{ instruction.step }
+                </div>
+            ))}
         </div>
      );
 }
