@@ -7,9 +7,11 @@ const Recipe = () => {
     // const url = `https://api.spoonacular.com/recipes/${id}/card?apiKey=${API_KEY}`
     const ingredientsUrl = `https://api.spoonacular.com/recipes/${id}/ingredientWidget.json?apiKey=${API_KEY}`
     const instructionsUrl = `https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=${API_KEY}`
+    const summaryUrl = `https://api.spoonacular.com/recipes/${id}/summary?apiKey=${API_KEY}`
     
     const [ingredients, setIngredients] = useState([])
     const [instructions, setInstructions] = useState([])
+    const [summary, setSummary] = useState([])
 
     useEffect(() => {
         fetch(ingredientsUrl)
@@ -23,7 +25,11 @@ const Recipe = () => {
         .then(data =>  setInstructions(data[0].steps))
       },[])
 
-      console.log(instructions)
+      useEffect(() => {
+        fetch(summaryUrl)
+        .then(res => res.json())
+        .then(data =>  setSummary(data))
+      },[])
 
       if(!ingredients) {
         return (
@@ -31,20 +37,29 @@ const Recipe = () => {
         )
       }
 
+      console.log(ingredients)
+
     return ( 
         <div className="recipe">
+            <h1> { summary.title } </h1>
+            <div className="ingredients">
             Ingredients:
             { ingredients.map((ingredient) => (
-                <div key={ ingredient.name } className="ingredients">
+                <div key={ ingredient.name }>
                         -{ ingredient.name }: { ingredient.amount.us.value } { ingredient.amount.us.unit }
                 </div>
             )) }
+            </div>
+
+            <div className="instructions">
             Instructions:
             { instructions.map((instruction) => (
-                <div key={ instruction.number } className="ingredients">
+                <div key={ instruction.number }>
                     -{ instruction.step }
                 </div>
             ))}
+            </div>
+
         </div>
      );
 }

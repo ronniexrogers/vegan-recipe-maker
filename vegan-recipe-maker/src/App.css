@@ -27,3 +27,17 @@ a:hover {
   width: 400px;
   text-align: center;
 }
+
+.instructions {
+  border: black solid 1px;
+  margin: 5px auto;
+  width: 400px;
+  text-align: center;
+}
+
+.ingredients {
+  border: black solid 1px;
+  margin: 5px auto;
+  width: 400px;
+  text-align: center;
+}
