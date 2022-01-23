@@ -41,8 +41,8 @@ const Recipe = () => {
             <h1> { summary.title } </h1>
             <div className="ingredients">
             Ingredients:
-            { ingredients.map((ingredient) => (
-                <div key={ ingredient.name }>
+            { ingredients.map((ingredient, index) => (
+                <div key={ index }>
                         -{ ingredient.name }: { ingredient.amount.us.value } { ingredient.amount.us.unit }
                 </div>
             )) }

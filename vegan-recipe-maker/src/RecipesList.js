@@ -1,9 +1,14 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const RecipesList = (data) => {
-    const recipeData = data.data
-    console.log(recipeData)
+    const recipeData = data.data.results
     let navigate = useNavigate()
+    console.log(recipeData)
+
+    useEffect(() => {
+
+      },[])
 
     return ( 
         <div className="recipes-list">
@@ -18,5 +23,5 @@ const RecipesList = (data) => {
         </div>
      );
 }
- 
+
 export default RecipesList;

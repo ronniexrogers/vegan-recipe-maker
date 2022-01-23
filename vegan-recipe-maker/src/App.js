@@ -14,15 +14,14 @@ const [recipeData, setRecipeData] = useState([])
 const [userInput, setUserInput] = useState('')
 
 const API_KEY = process.env.REACT_APP_API_KEY
-// const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=vegan&number=2`
-const url = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY}&ingredients=apples,+flour,+sugar&number=2`
+const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&includeIngredients=${userInput.trim().split(/\s+/).join('+')}&number=5&diet=vegan`
 
 
 useEffect(() => {
   fetch(url)
   .then(res => res.json())
   .then(data => setRecipeData(data))
-},[])
+},[userInput])
 
 
 if(!recipeData) {
@@ -31,15 +30,13 @@ if(!recipeData) {
   )
 }
 
-  console.log(userInput)
-
   return (
     <Router>
 
       <NavBar />
 
       <Routes>
-        <Route path="/" setUserInput={setUserInput} element={ <Home /> }/>
+        <Route path="/" element={ <Home setUserInput={setUserInput} /> }/>
         <Route path="/about" element={ <About /> }/>
         <Route path="/recipe/:id" element={ <Recipe data={ recipeData } /> } />
         <Route path="/recipes-list" element={ <RecipesList data={ recipeData } /> }/>

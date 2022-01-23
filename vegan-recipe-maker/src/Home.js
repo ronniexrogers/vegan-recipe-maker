@@ -1,33 +1,23 @@
 import { useNavigate } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
-const Home = (props) => {
+const Home = ( props ) => {
 
-    const [input, setInput] = useState('')
-    const submitData = () => {
-        setInput(userInputRef.current.value)
-    }
     const userInputRef = useRef()
 
     let navigate = useNavigate()
 
     const handleClick = () => {
-        submitData()
         navigate("/recipes-list")
-        // passInfo()
+        props.setUserInput(userInputRef.current.value)
     }
-
-    console.log(props)
-
-    // const passInfo = () => {
-    //     props.setUserInput(input)
-    // }
 
     return ( 
     <div className="home">
         yo i'm the home page
         <div className="search-bar">
-                <input ref={userInputRef} type="text" placeholder="Enter Ingredients" ></input>
+                <h4>Enter key ingredients separated by commas:</h4>
+                <input ref={userInputRef} type="text" placeholder="e.g. carrots, tofu, etc." ></input>
                 <button onClick={handleClick} >enter</button>
         </div>
     </div> );
