@@ -22,7 +22,7 @@ function App() {
   const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&includeIngredients=${userInput
     .trim()
     .split(/\s+/)
-    .join("+")}&number=5&diet=vegan`;
+    .join("+")}&number=10&diet=vegan`;
 
   useEffect(() => {
     fetch(url)

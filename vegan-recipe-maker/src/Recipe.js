@@ -9,7 +9,7 @@ import {
   CardText,
 } from "reactstrap";
 
-const Recipe = () => {
+const Recipe = (data) => {
   let { id } = useParams();
   const API_KEY = process.env.REACT_APP_API_KEY;
   const ingredientsUrl = `https://api.spoonacular.com/recipes/${id}/ingredientWidget.json?apiKey=${API_KEY}`;
@@ -47,30 +47,12 @@ const Recipe = () => {
     );
   }
 
+  console.log(data)
+
   return (
-    // <div className="recipe">
-    //   <h1> {summary.title} </h1>
-    //   <div className="ingredients">
-    //     Ingredients:
-    //     {ingredients.map((ingredient, index) => (
-    //       <div key={index}>
-    //         -{ingredient.name}: {ingredient.amount.us.value}{" "}
-    //         {ingredient.amount.us.unit}
-    //       </div>
-    //     ))}
-    //   </div>
-
-    //   <div className="instructions">
-    //     Instructions:
-    //     {instructions.map((instruction) => (
-    //       <div key={instruction.number}>-{instruction.step}</div>
-    //     ))}
-    //   </div>
-    // </div>
-
     <div>
       <Card>
-        <CardImg alt="recipe" src="" top width="100%" />
+        <CardImg alt="recipe" src={`https://spoonacular.com/recipeImages/${ id }-312x231.jpg`} top width="100%" />
         <CardBody>
           <CardTitle tag="h5">Ingredients</CardTitle>
           <CardText>
