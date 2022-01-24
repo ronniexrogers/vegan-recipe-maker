@@ -5,10 +5,9 @@ import {
   Card,
   CardImg,
   CardBody,
-  CardSubtitle,
-  CardText,
   CardTitle,
   Button,
+  Spinner,
 } from "reactstrap";
 
 const RecipesList = (data) => {
@@ -18,7 +17,11 @@ const RecipesList = (data) => {
   useEffect(() => {}, []);
 
   if (!recipeData) {
-    return <p>Loading....</p>;
+    return (
+      <Spinner color="black" size="">
+        Loading...
+      </Spinner>
+    )
   }
 
   return (
@@ -33,7 +36,10 @@ const RecipesList = (data) => {
               lead-in to additional content. This content is a little bit
               longer.
             </CardText> */}
-            <Button className="recipe-button" onClick={() => navigate(`/recipe/${recipe.id}`)}>
+            <Button
+              className="recipe-button"
+              onClick={() => navigate(`/recipe/${recipe.id}`)}
+            >
               View Recipe
             </Button>
           </CardBody>
