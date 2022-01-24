@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './NavBar';
 import RecipesList from './RecipesList';
 import Recipe from './Recipe';
@@ -16,7 +17,6 @@ const [userInput, setUserInput] = useState('')
 const API_KEY = process.env.REACT_APP_API_KEY
 const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&includeIngredients=${userInput.trim().split(/\s+/).join('+')}&number=5&diet=vegan`
 
-
 useEffect(() => {
   fetch(url)
   .then(res => res.json())
@@ -29,6 +29,7 @@ if(!recipeData) {
     <p>Loading....</p>
   )
 }
+
 
   return (
     <Router>

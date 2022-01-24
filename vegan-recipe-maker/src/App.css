@@ -1,9 +1,7 @@
 .nav-bar {
-  background-color: navy;
+  background-color: rgb(9, 119, 27);
   color: antiquewhite;
   text-decoration: none;
-  height: 30px;
-  padding: 8px 0px 0px 0px;
 }
 
 a:visited {
@@ -18,7 +16,7 @@ a {
 
 a:hover {
   text-decoration: none;
-  color:rgb(119, 119, 119);
+  color:rgb(176, 253, 161);
 }
 
 .recipe-card {
@@ -40,4 +38,8 @@ a:hover {
   margin: 5px auto;
   width: 400px;
   text-align: center;
+}
+
+.recipe-button {
+  
 }

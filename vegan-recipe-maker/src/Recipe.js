@@ -11,6 +11,7 @@ const Recipe = () => {
     const [ingredients, setIngredients] = useState([])
     const [instructions, setInstructions] = useState([])
     const [summary, setSummary] = useState([])
+    const [visualIngredients, setVisualIngredients] = useState('')
 
     useEffect(() => {
         fetch(ingredientsUrl)
