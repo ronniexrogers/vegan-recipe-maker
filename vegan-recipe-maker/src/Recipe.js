@@ -14,12 +14,9 @@ const Recipe = (data) => {
   const API_KEY = process.env.REACT_APP_API_KEY;
   const ingredientsUrl = `https://api.spoonacular.com/recipes/${id}/ingredientWidget.json?apiKey=${API_KEY}`;
   const instructionsUrl = `https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=${API_KEY}`;
-  const summaryUrl = `https://api.spoonacular.com/recipes/${id}/summary?apiKey=${API_KEY}`;
 
   const [ingredients, setIngredients] = useState([]);
   const [instructions, setInstructions] = useState([]);
-  const [summary, setSummary] = useState([]);
-  const [visualIngredients, setVisualIngredients] = useState("");
 
   useEffect(() => {
     fetch(ingredientsUrl)
@@ -33,12 +30,6 @@ const Recipe = (data) => {
       .then((data) => setInstructions(data[0].steps));
   }, []);
 
-  useEffect(() => {
-    fetch(summaryUrl)
-      .then((res) => res.json())
-      .then((data) => setSummary(data));
-  }, []);
-
   if (!ingredients) {
     return (
       <Spinner color="black" size="">
@@ -46,8 +37,6 @@ const Recipe = (data) => {
       </Spinner>
     );
   }
-
-  console.log(data)
 
   return (
     <div>

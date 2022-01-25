@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./NavBar";
@@ -22,7 +18,7 @@ function App() {
   const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&includeIngredients=${userInput
     .trim()
     .split(/\s+/)
-    .join("+")}&number=10&diet=vegan`;
+    .join("+")}&number=5&diet=vegan`;
 
   useEffect(() => {
     fetch(url)
@@ -53,7 +49,7 @@ function App() {
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>
-  );
+  )
 }
 
 export default App;
