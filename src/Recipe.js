@@ -30,6 +30,11 @@ const Recipe = (data) => {
       .then((data) => setInstructions(data[0].steps));
   }, []);
 
+  const imgStyle = {
+    maxHeight: "45%",
+    maxWidth: "45%",
+  }
+
   if (!ingredients) {
     return (
       <Spinner color="black" size="">
@@ -41,7 +46,7 @@ const Recipe = (data) => {
   return (
     <div>
       <Card>
-        <CardImg alt="recipe" src={`https://spoonacular.com/recipeImages/${ id }-312x231.jpg`} top width="100%" />
+        <CardImg style={imgStyle} alt="recipe" src={`https://spoonacular.com/recipeImages/${ id }-312x231.jpg`} top width="100%" />
         <CardBody>
           <CardTitle tag="h5">Ingredients</CardTitle>
           <CardText>
