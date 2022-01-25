@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import { Card, CardBody, CardTitle, CardText, CardSubtitle } from "reactstrap";
-import banner from "/src/vegan-food-banner.jpeg";
+import banner from "./vegan-food-banner.jpeg";
 
 const Home = (props) => {
   const userInputRef = useRef();
