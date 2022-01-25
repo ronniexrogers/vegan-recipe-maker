@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./NavBar";
 import RecipesList from "./RecipesList";
 import Recipe from "./Recipe";
-import About from "./About";
+import About from "./About"
 import Home from "./Home";
 import ErrorPage from "./ErrorPage";
 import { Spinner } from "reactstrap";
