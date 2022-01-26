@@ -18,10 +18,10 @@ Want to toy around with the code for yourself and implement features you think w
 <li>Take the link from your repo and clone it to your machine</li>
 <li>Once your code is complete, push it to Github and create a Pull Request for me to review.</li>
 </ul>
-<br><br>
+<br>
 <b>Some shots of the application in action!</b>
-<img src="/Users/Ronnie/Desktop/SEIR1213/Unit2/Projects/vegan-recipe-maker/ReadMe-Files/SS1.png" />
-<img src="/Users/Ronnie/Desktop/SEIR1213/Unit2/Projects/vegan-recipe-maker/ReadMe-Files/SS2.png" />
-<img src="/Users/Ronnie/Desktop/SEIR1213/Unit2/Projects/vegan-recipe-maker/ReadMe-Files/SS3.png" />
-<img src="/Users/Ronnie/Desktop/SEIR1213/Unit2/Projects/vegan-recipe-maker/ReadMe-Files/SS4.png" />
+<img src="./ReadMe-Files/SS1.png" />
+<img src="./ReadMe-Files/SS2.png" />
+<img src="./ReadMe-Files/SS3.png" />
+<img src="./ReadMe-Files/SS4.png" />
 <br><br>
