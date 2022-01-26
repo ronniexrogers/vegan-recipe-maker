@@ -25,3 +25,12 @@ Want to toy around with the code for yourself and implement features you think w
 <img src="./ReadMe-Files/SS3.png" />
 <img src="./ReadMe-Files/SS4.png" />
 <br><br>
+<b>What are some stretch goals I have for this app?</b>
+<br>
+<ul>
+<li> First off, I'd like to pay to upgrade my API request limit increased. 150 requests goes quick. </li>
+<li> Secondly, once the limit is increased, I could add a filter to allow the user to display more recipes </li>
+<li> Third, I'd like to give an option to search by cuisine type rather than by ingredients. </li>
+<li> Fourth, I'd like to upgrade how I pull image data for the recipes. Currently I get the images from my API. But, their images are very low resolution and don't look good in my opinion. </li>
+<li> Fifth, the API I'm using offers additional information for the recipes that I will incorporate including: nutrition facts, cost, ingredients widget, etc. </li>
+</ul>
